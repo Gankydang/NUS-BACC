@@ -80,18 +80,6 @@ def adjust_loading_for_tam(prev_loading, quarter):
                         tam_deficit = tam_target - current_output
                         adjustment_made = True
                         break
-            else:  # Need to decrease output
-                # Check if we can decrease this node's loading
-                if current_loading[node] > max(0, prev_loading[node] - 2500):
-                    # Decrease by up to 1 wafers
-                    decrease = min(1, int((-tam_deficit / wafer_contribution) + 0.5))
-                    decrease = min(decrease, current_loading[node] - max(0, prev_loading[node] - 2500))
-                    if decrease > 0:
-                        current_loading[node] -= decrease
-                        current_output = calculate_quarterly_output(current_loading, quarter)
-                        tam_deficit = tam_target - current_output
-                        adjustment_made = True
-                        break
         
         if not adjustment_made:
             break
