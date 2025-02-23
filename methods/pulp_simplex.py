@@ -1,5 +1,3 @@
-# pulp: minimising overall changes in wafers
-
 import pulp
 
 # Define the quarters and nodes

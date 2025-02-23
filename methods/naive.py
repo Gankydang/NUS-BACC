@@ -1,4 +1,3 @@
-# Neil method
 import numpy as np
 
 # Constants from the problem

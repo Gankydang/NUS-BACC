@@ -1,4 +1,3 @@
-# Brute force
 import numpy as np
 
 # Constants from the problem
